@@ -53,7 +53,8 @@ public class GroupProject {
 	}
 	
 	/* Author:  Jared Moore
-	 * 
+	 * Precondition:  There is an ArrayList with the answers and the students
+	 * Postcondition:  A correct answers array is created
 	 */
 	public static char[] setUpAnswerArray(ArrayList<String> array) {
 		
@@ -61,6 +62,10 @@ public class GroupProject {
 		return array1;
 	}
 	
+	/* Author:  Jared Moore
+	 * Precondition:  There is an array of student answers but they have not been scored
+	 * Postcondition:  A score is set for each set of answers
+	 */
 	public static int checkCorrect(char[] answers, char[] student) {
 		
 		int sum = 0;
@@ -68,31 +73,38 @@ public class GroupProject {
 			System.err.println("Arrays are not the same size");
 			System.exit(1);
 		}
-		for (int i = 0; i < answers.length; i++) 
-			if (answers[i] == student[i])
-				sum++;
+		for (int i = 0; i < answers.length; i++) // check the answers by the character
+			if (answers[i] == student[i]) // for each answer that is the same as the correct one
+				sum++; // increment the sum
 		return sum;
 	}
 	
-	public static char calcScore(int correct) {
+	/* Author:  Jared Moore
+	 * Precondition:  There is a score for student answers but it doesn't have a grade
+	 * Postcondition:  An appropriate grade is assigned to each student
+	 */
+	public static char calcScore(int correct) {// correct being the number of correct answers
 		
-		char grade = 0;
-		switch (correct) {
-		case 10:
+		correct = ((correct >= 0) && (correct <= 10)) ? correct : 0; // conditional statement. ensures data 
+		// integrity.  If correct is not between 0 and 10 inclusive, it gets the value of 0
+		char grade;
+		switch (correct) { // an amazing tool we have yet to learn
+		case 10: // if correct == 10
 			grade = 'A';
-			break;
-		case 9:
+			break; // exit the block, break can be used in any statement in braces (not classes or methods),
+			// to exit the block of code
+		case 9: // if correct == 9
 			grade = 'B';
 			break;
-		case 7:
-		case 8:
+		case 7: // if correct is between 7
+		case 8: // and 8 inclusive
 			grade = 'C';
 			break;
-		case 5:
-		case 6:
+		case 5: // if correct is between 5
+		case 6: // and 6
 			grade = 'D';
 			break;
-		default:
+		default: // all other possibilities, basically anything less than 5
 			grade = 'F';
 			break;			
 		}
