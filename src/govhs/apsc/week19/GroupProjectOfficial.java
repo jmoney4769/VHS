@@ -22,8 +22,8 @@ public class GroupProjectOfficial {
 			reader = new BufferedReader(inReader);
 		}
 		catch (FileNotFoundException e) { // properly handle possible exceptions
-			System.err.println("File does not exist");
-			System.exit(1);
+			System.err.println("File does not exist"); 
+			System.exit(1); // if the file is not there, it would be pointless to continue
 		}
 		return reader;
 	}	
