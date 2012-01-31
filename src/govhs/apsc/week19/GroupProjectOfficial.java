@@ -4,7 +4,9 @@ package govhs.apsc.week19; // ignore this, I use packages with eclipse to organi
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class GroupProjectOfficial {
 
@@ -27,6 +29,51 @@ public class GroupProjectOfficial {
 		}
 		return reader;
 	}	
+	
+	public static void readFile(BufferedReader reader) throws IOException { // added a parameter so that 
+		// it would have a reader to read from
+	
+		reader = GroupProjectOfficial.getFile("res/answers.txt");
+		String loop, holdkey, holdstudent;
+		int i=0, f=0;
+		char [][] originalstudentArray;
+		char [] keyArray;
+		int [] idArray;
+		int k;
+		originalstudentArray= new char[56][10];
+		idArray= new int [56];
+		keyArray=new char[10];
+		loop= reader.readLine();
+
+		//need a type for the variable or it will not work
+		StringTokenizer strTkn = new StringTokenizer(loop); // added a type for the variable
+		holdkey = strTkn.nextToken();
+
+		for(int w=0; w<10; w++) {		
+			keyArray[w]=holdkey.charAt(w);
+			System.out.print(keyArray[w]+" ");
+		}
+		
+		loop=reader.readLine();
+
+		while(loop!=null) {
+		
+			strTkn= new StringTokenizer(loop);
+			idArray[i]=Integer.parseInt(strTkn.nextToken());
+			System.out.println(idArray[i]);
+			holdstudent=strTkn.nextToken();
+			System.out.println(holdstudent);
+
+			for(int j=0; j<10; j++) 
+				originalstudentArray[i][j]=holdstudent.charAt(j);
+			i++;
+			loop=reader.readLine();
+		}
+
+		seperator(originalstudentArray, keyArray, idArray); // not sure what you want to do here
+		
+		// please add a return type.  Otherwise running this method will do absolutely nothing
+	}
 		
 	/* Author: Uday Srinivasan
 	 * Precondition: One character array of 10 elements with the characters T or F from the answer key and
