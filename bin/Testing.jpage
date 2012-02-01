@@ -1,0 +1,2 @@
+Character c = 'A';
+c.equals('A')
