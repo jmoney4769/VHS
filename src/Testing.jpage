@@ -1,4 +1,1 @@
-Object[] a = new Object[10];
-a[0] = new chapter.five.Student();
-a[1] = "Hi there";
-System.out.println((String[1]).indexOf("there"))
+String[] s = {"far", "don't", "trees", "from", "fall", "apples"};govhs.apsc.week24.boxBug.BoxBugRunner.insertionSort(s)
