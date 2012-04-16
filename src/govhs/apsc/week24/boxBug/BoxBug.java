@@ -28,6 +28,7 @@ public class BoxBug extends Bug
 {
     private int steps;
     private int sideLength;
+  
 
     /**
      * Constructs a box bug that traces a square of a given side length
@@ -56,4 +57,8 @@ public class BoxBug extends Bug
             steps = 0;
         }
     }
+    
+    
+    
+    
 }

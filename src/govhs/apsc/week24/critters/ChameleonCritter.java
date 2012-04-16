@@ -22,6 +22,7 @@ import info.gridworld.actor.Actor;
 import info.gridworld.actor.Critter;
 import info.gridworld.grid.Location;
 
+import java.awt.Color;
 import java.util.ArrayList;
 
 /**
@@ -38,8 +39,10 @@ public class ChameleonCritter extends Critter
     public void processActors(ArrayList<Actor> actors)
     {
         int n = actors.size();
-        if (n == 0)
+        if (n == 0) {
+        	this.setColor(Color.BLACK); // not sure if there is a way to darken, but now it is darker
             return;
+        }
         int r = (int) (Math.random() * n);
 
         Actor other = actors.get(r);

@@ -1,1 +1,3 @@
-String[] s = {"far", "don't", "trees", "from", "fall", "apples"};govhs.apsc.week24.boxBug.BoxBugRunner.insertionSort(s)
+info.gridworld.grid.Location loc1 = new info.gridworld.grid.Location(4,3);
+int dir = loc1.getDirectionToward(new info.gridworld.grid.Location(6, 5));
+dir

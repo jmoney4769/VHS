@@ -26,10 +26,13 @@ public class TestSortAlgorithms {
 			break;
 		case 3:
 			insertionSort(a);
+			break;
 		case 4: 
 			mergeSort(a);
+			break;
 		case 5:
 			quickSort(a, 0, a.length - 1);
+			break;
 		}
 		printArray(a);
 	}
@@ -132,9 +135,8 @@ public class TestSortAlgorithms {
 	}
 
 	private static void mergeSort(int[] a) {
-		int middle = a.length / 2;
 		int[] copyBuffer = new int[a.length];
-		mergeSortHelper(a, copyBuffer, 0, middle);
+		mergeSortHelper(a, copyBuffer, 0, a.length - 1);
 		
 		
 	}
@@ -163,7 +165,8 @@ public class TestSortAlgorithms {
 		}
 		
 		for (int i = low; i <= high; i++)
-			a[i] = copyBuffer[i];		
+			a[i] = copyBuffer[i];	
+		printArray(a);
 	}
 
 	private static void quickSort(int[] a, int left, int right) {
@@ -175,7 +178,7 @@ public class TestSortAlgorithms {
 		int j = right;
 		int pivotValue = a[(left + right) / 2];
 		while (i < j) {
-			while (a[j] < pivotValue)
+			while (a[i] < pivotValue) // error was here, looking at a[j] instead of a[i]
 				i++;
 			while (pivotValue < a[j])
 				j--;
@@ -186,6 +189,7 @@ public class TestSortAlgorithms {
 				i++;
 				j--;
 			}
+			printArray(a);
 		}
 		quickSort(a, left, j);
 		quickSort(a, i, right);

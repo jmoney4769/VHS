@@ -1,0 +1,10 @@
+Tom Jones 80 90 80
+Mary Smith 50 60 90
+Hillary Jones 100 54 98
+Sammy Alba 98 87 76
+Zitti Kambos 76 56 98
+Tim Zulla 87 67 87
+Beth Babson 98 78 87
+Jim zone 56 76 78
+Addy Crocker 98 87 87
+Matt Brooks 56 76 78
