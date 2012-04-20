@@ -1,3 +1,1 @@
-info.gridworld.grid.Location loc1 = new info.gridworld.grid.Location(4,3);
-int dir = loc1.getDirectionToward(new info.gridworld.grid.Location(6, 5));
-dir
+1234  % 10
